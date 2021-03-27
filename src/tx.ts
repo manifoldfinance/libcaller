@@ -1,0 +1,90 @@
+import { Interface } from '@ethersproject/abi';
+import { Contract } from '@ethersproject/contracts';
+import { JsonRpcProvider } from '@ethersproject/providers';
+import { jsonToGraphQLQuery } from 'json-to-graphql-query';
+import { abi as multicallAbi } from './abis/multicall.json';
+import Multicaller from './utils/multicaller';
+import getProvider from './utils/provider';
+import { signMessage, getBlockNumber } from './utils/web3';
+
+export const MULTICALL = {
+  '1': '0xeefba1e63905ef1d7acba5a8513c70307c1ce441',
+  '3': '0x53c43764255c17bd724f74c4ef150724ac50a3ed',
+  '4': '0x42ad527de7d4e9d9d011ac45b31d8551f8fe9821',
+  '5': '0x77dca2c955b15e9de4dbbcf1246b4b85b651e50e',
+  '6': '0x53c43764255c17bd724f74c4ef150724ac50a3ed',
+  '17': '0xB9cb900E526e7Ad32A2f26f1fF6Dee63350fcDc5',
+  '42': '0x2cc8688c5f75e365aaeeb4ea8d6a480405a48d2a',
+  '56': '0x1ee38d535d541c55c9dae27b12edf090c608e6fb',
+  '82': '0x579De77CAEd0614e3b158cb738fcD5131B9719Ae',
+  '97': '0x8b54247c6BAe96A6ccAFa468ebae96c4D7445e46',
+  '100': '0xb5b692a88bdfc81ca69dcb1d924f59f0413a602a',
+  '128': '0x37ab26db3df780e7026f3e767f65efb739f48d8e',
+  '137': '0xCBca837161be50EfA5925bB9Cc77406468e76751',
+  '256': '0xC33994Eb943c61a8a59a918E2de65e03e4e385E0',
+  '1337': '0x566131e85d46cc7BBd0ce5C6587E9912Dc27cDAc',
+  '250': '0x7f6A10218264a22B4309F3896745687E712962a0'
+};
+
+/**
+export const _SUBGRAPH_URL = {
+  '1': 'https://api.thegraph.com/subgraphs/name/${ORG}/${SUBGRAPH}'
+};
+
+*/
+
+export async function call(provider, abi: any[], call: any[], options?) {
+  const contract = new Contract(call[0], abi, provider);
+  try {
+    const params = call[2] || [];
+    return await contract[call[1]](...params, options || {});
+  } catch (e) {
+    return Promise.reject(e);
+  }
+}
+
+export async function multicall(
+  network: string,
+  provider,
+  abi: any[],
+  calls: any[],
+  options?
+) {
+  const multi = new Contract(MULTICALL[network], multicallAbi, provider);
+  const itf = new Interface(abi);
+  try {
+    const [, res] = await multi.aggregate(
+      calls.map((call) => [
+        call[0].toLowerCase(),
+        itf.encodeFunctionData(call[1], call[2])
+      ]),
+      options || {}
+    );
+    return res.map((call, i) => itf.decodeFunctionResult(calls[i][1], call));
+  } catch (e) {
+    return Promise.reject(e);
+  }
+}
+
+
+export async function sendTransaction(
+  web3,
+  contractAddress: string,
+  abi: any[],
+  action: string,
+  params: any[],
+  overrides = {}
+) {
+  const signer = web3.getSigner();
+  const contract = new Contract(contractAddress, abi, web3);
+  const contractWithSigner = contract.connect(signer);
+  // overrides.gasLimit = 12e6;
+  return await contractWithSigner[action](...params, overrides);
+}
+
+export default {
+  call,
+  multicall,
+  sendTransaction,
+  Multicaller
+};
