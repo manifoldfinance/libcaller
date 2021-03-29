@@ -1,0 +1,16 @@
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+node_modules
+*.log
+*.pid
+*.seed
+*.pid.lock
+coverage/
+lib-cov
+.nyc/
+.vscode/
+.env
+*.DS_Store
+._*
