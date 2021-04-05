@@ -8,6 +8,11 @@ Multicall allows multiple smart contract constant function calls to be grouped i
 
 libcaller is fully written in typescript so has full compile time support. The motivation of this package was to expose a super simple and easy to understand interface for you to take the full benefits of the multicalls. Also to not being opinionated on how you use it, you can use it with web3, ethers or even pass in a custom nodeUrl and we do it for you. This package takes care of the decoding for you but at the same time if you dont want it to you can turn that part off.
 
+## Overview
+
+![](docs/libcaller.svg)
+
+
 ## Installation
 
 ### npm:
