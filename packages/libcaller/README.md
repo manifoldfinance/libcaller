@@ -1,26 +1,26 @@
-[![npm version](https://badge.fury.io/js/ethereum-multicall.svg)](https://badge.fury.io/js/ethereum-multicall)
-![downloads](https://img.shields.io/npm/dw/ethereum-multicall)
+[![npm version](https://badge.fury.io/js/libcaller.svg)](https://badge.fury.io/js/libcaller)
+![downloads](https://img.shields.io/npm/dw/libcaller)
 
-# ethereum-multicall
+# libcaller
 
-ethereum-multicall is a lightweight library for interacting with the [multicall](https://github.com/makerdao/multicall/blob/master/src/Multicall.sol) smart contract.
+libcaller is a lightweight library for interacting with the [multicall](https://github.com/makerdao/multicall/blob/master/src/Multicall.sol) smart contract.
 
 Multicall allows multiple smart contract constant function calls to be grouped into a single call and the results aggregated into a single result. This reduces the number of separate JSON RPC requests that need to be sent over the network if using a remote node like Infura, and provides the guarantee that all values returned are from the same block. The latest block number is also returned along with the aggregated results.
 
-ethereum-multicall is fully written in typescript so has full compile time support. The motivation of this package was to expose a super simple and easy to understand interface for you to take the full benefits of the multicalls. Also to not being opinionated on how you use it, you can use it with web3, ethers or even pass in a custom nodeUrl and we do it for you. This package takes care of the decoding for you but at the same time if you dont want it to you can turn that part off.
+libcaller is fully written in typescript so has full compile time support. The motivation of this package was to expose a super simple and easy to understand interface for you to take the full benefits of the multicalls. Also to not being opinionated on how you use it, you can use it with web3, ethers or even pass in a custom nodeUrl and we do it for you. This package takes care of the decoding for you but at the same time if you dont want it to you can turn that part off.
 
 ## Installation
 
 ### npm:
 
 ```js
-$ npm install ethereum-multicall
+$ npm install libcaller
 ```
 
 ### yarn:
 
 ```js
-$ yarn add ethereum-multicall
+$ yarn add libcaller
 ```
 
 ## Usage
@@ -30,13 +30,13 @@ $ yarn add ethereum-multicall
 ### JavaScript (ES3)
 
 ```js
-var ethereumMulticall = require('ethereum-multicall');
+var ethereumMulticall = require('libcaller');
 ```
 
 ### JavaScript (ES5 or ES6)
 
 ```js
-const ethereumMulticall = require('ethereum-multicall');
+const ethereumMulticall = require('libcaller');
 ```
 
 ### JavaScript (ES6) / TypeScript
@@ -46,7 +46,7 @@ import {
   Multicall,
   ContractCallResults,
   ContractCallContext,
-} from 'ethereum-multicall';
+} from 'libcaller';
 ```
 
 ### ethers usage example
@@ -56,7 +56,7 @@ import {
   Multicall,
   ContractCallResults,
   ContractCallContext,
-} from 'ethereum-multicall';
+} from 'libcaller';
 import { ethers } from 'ethers';
 
 let provider = ethers.getDefaultProvider();
@@ -129,7 +129,7 @@ import {
   Multicall,
   ContractCallResults,
   ContractCallContext,
-} from 'ethereum-multicall';
+} from 'libcaller';
 import Web3 from 'web3';
 
 const web3 = new Web3('https://some.local-or-remote.node:8546');
@@ -199,7 +199,7 @@ import {
   Multicall,
   ContractCallResults,
   ContractCallContext,
-} from 'ethereum-multicall';
+} from 'libcaller';
 
 const multicall = new Multicall({ nodeUrl: 'https://some.local-or-remote.node:8546' });
 
@@ -281,4 +281,4 @@ const multicall = new Multicall({
 
 Please raise any issues in the below link.
 
-https://github.com/joshstevens19/ethereum-multicall/issues
+https://github.com/joshstevens19/libcaller/issues

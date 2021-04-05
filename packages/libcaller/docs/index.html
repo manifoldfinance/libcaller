@@ -58,14 +58,14 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<p><a href="https://badge.fury.io/js/ethereum-multicall"><img src="https://badge.fury.io/js/ethereum-multicall.svg" alt="npm version"></a>
-				<img src="https://img.shields.io/npm/dw/ethereum-multicall" alt="downloads"></p>
-				<a href="#ethereum-multicall" id="ethereum-multicall" style="color: inherit; text-decoration: none;">
-					<h1>ethereum-multicall</h1>
+				<p><a href="https://badge.fury.io/js/libcaller"><img src="https://badge.fury.io/js/libcaller.svg" alt="npm version"></a>
+				<img src="https://img.shields.io/npm/dw/libcaller" alt="downloads"></p>
+				<a href="#libcaller" id="libcaller" style="color: inherit; text-decoration: none;">
+					<h1>libcaller</h1>
 				</a>
-				<p>ethereum-multicall is a lightweight library for interacting with the <a href="https://github.com/makerdao/multicall/blob/master/src/Multicall.sol">multicall</a> smart contract.</p>
+				<p>libcaller is a lightweight library for interacting with the <a href="https://github.com/makerdao/multicall/blob/master/src/Multicall.sol">multicall</a> smart contract.</p>
 				<p>Multicall allows multiple smart contract constant function calls to be grouped into a single call and the results aggregated into a single result. This reduces the number of separate JSON RPC requests that need to be sent over the network if using a remote node like Infura, and provides the guarantee that all values returned are from the same block. The latest block number is also returned along with the aggregated results.</p>
-				<p>ethereum-multicall is fully written in typescript so has full compile time support. The motivation of this package was to expose a super simple and easy to understand interface for you to take the full benefits of the multicalls. Also to not being opinionated on how you use it, you can use it with web3, ethers or even pass in a custom nodeUrl and we do it for you. This package takes care of the decoding for you but at the same time if you dont want it to you can turn that part off.</p>
+				<p>libcaller is fully written in typescript so has full compile time support. The motivation of this package was to expose a super simple and easy to understand interface for you to take the full benefits of the multicalls. Also to not being opinionated on how you use it, you can use it with web3, ethers or even pass in a custom nodeUrl and we do it for you. This package takes care of the decoding for you but at the same time if you dont want it to you can turn that part off.</p>
 				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
 					<h2>Installation</h2>
 				</a>
@@ -88,12 +88,12 @@
 				<a href="#javascript-es3" id="javascript-es3" style="color: inherit; text-decoration: none;">
 					<h3>JavaScript (ES3)</h3>
 				</a>
-				<pre><code class="language-js"><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">ethereumMulticall</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;ethereum-multicall&#039;</span><span style="color: #000000">);</span>
+				<pre><code class="language-js"><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">ethereumMulticall</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;libcaller&#039;</span><span style="color: #000000">);</span>
 </code></pre>
 				<a href="#javascript-es5-or-es6" id="javascript-es5-or-es6" style="color: inherit; text-decoration: none;">
 					<h3>JavaScript (ES5 or ES6)</h3>
 				</a>
-				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">ethereumMulticall</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;ethereum-multicall&#039;</span><span style="color: #000000">);</span>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">ethereumMulticall</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;libcaller&#039;</span><span style="color: #000000">);</span>
 </code></pre>
 				<a href="#javascript-es6--typescript" id="javascript-es6--typescript" style="color: inherit; text-decoration: none;">
 					<h3>JavaScript (ES6) / TypeScript</h3>
@@ -102,7 +102,7 @@
 <span style="color: #000000">  </span><span style="color: #001080">Multicall</span><span style="color: #000000">,</span>
 <span style="color: #000000">  </span><span style="color: #001080">ContractCallResults</span><span style="color: #000000">,</span>
 <span style="color: #000000">  </span><span style="color: #001080">ContractCallContext</span><span style="color: #000000">,</span>
-<span style="color: #000000">} </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;ethereum-multicall&#039;</span><span style="color: #000000">;</span>
+<span style="color: #000000">} </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;libcaller&#039;</span><span style="color: #000000">;</span>
 </code></pre>
 				<a href="#ethers-usage-example" id="ethers-usage-example" style="color: inherit; text-decoration: none;">
 					<h3>ethers usage example</h3>
@@ -111,7 +111,7 @@
 <span style="color: #000000">  </span><span style="color: #001080">Multicall</span><span style="color: #000000">,</span>
 <span style="color: #000000">  </span><span style="color: #001080">ContractCallResults</span><span style="color: #000000">,</span>
 <span style="color: #000000">  </span><span style="color: #001080">ContractCallContext</span><span style="color: #000000">,</span>
-<span style="color: #000000">} </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;ethereum-multicall&#039;</span><span style="color: #000000">;</span>
+<span style="color: #000000">} </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;libcaller&#039;</span><span style="color: #000000">;</span>
 <span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">ethers</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;ethers&#039;</span><span style="color: #000000">;</span>
 
 <span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">provider</span><span style="color: #000000"> = </span><span style="color: #001080">ethers</span><span style="color: #000000">.</span><span style="color: #795E26">getDefaultProvider</span><span style="color: #000000">();</span>
@@ -183,7 +183,7 @@
 <span style="color: #000000">  </span><span style="color: #001080">Multicall</span><span style="color: #000000">,</span>
 <span style="color: #000000">  </span><span style="color: #001080">ContractCallResults</span><span style="color: #000000">,</span>
 <span style="color: #000000">  </span><span style="color: #001080">ContractCallContext</span><span style="color: #000000">,</span>
-<span style="color: #000000">} </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;ethereum-multicall&#039;</span><span style="color: #000000">;</span>
+<span style="color: #000000">} </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;libcaller&#039;</span><span style="color: #000000">;</span>
 <span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #001080">Web3</span><span style="color: #000000"> </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;web3&#039;</span><span style="color: #000000">;</span>
 
 <span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">web3</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Web3</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;https://some.local-or-remote.node:8546&#039;</span><span style="color: #000000">);</span>
@@ -252,7 +252,7 @@
 <span style="color: #000000">  </span><span style="color: #001080">Multicall</span><span style="color: #000000">,</span>
 <span style="color: #000000">  </span><span style="color: #001080">ContractCallResults</span><span style="color: #000000">,</span>
 <span style="color: #000000">  </span><span style="color: #001080">ContractCallContext</span><span style="color: #000000">,</span>
-<span style="color: #000000">} </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;ethereum-multicall&#039;</span><span style="color: #000000">;</span>
+<span style="color: #000000">} </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;libcaller&#039;</span><span style="color: #000000">;</span>
 
 <span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">multicall</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Multicall</span><span style="color: #000000">({ </span><span style="color: #001080">nodeUrl:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;https://some.local-or-remote.node:8546&#039;</span><span style="color: #000000"> });</span>
 
@@ -331,7 +331,7 @@
 					<h2>Issues</h2>
 				</a>
 				<p>Please raise any issues in the below link.</p>
-				<p><a href="https://github.com/joshstevens19/ethereum-multicall/issues">https://github.com/joshstevens19/ethereum-multicall/issues</a></p>
+				<p><a href="https://github.com/joshstevens19/libcaller/issues">https://github.com/joshstevens19/libcaller/issues</a></p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
