@@ -11,7 +11,7 @@
     "tsc:build": "npx tsc -b",
     "tsc:watch": "npx tsc -w",
     "clean": "rm -f package-lock.json; rm -f yarn.lock; rm -rf node_modules; npm clean",
-    "prepare": "npx tslib build",
+    "prepare": "npx tsdx build",
     "docs": "npx typedoc src/index.ts"
   },
   "author": "SEE CONTRIBUTORS",
