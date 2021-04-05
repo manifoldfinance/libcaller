@@ -1,6 +1,6 @@
 {
   "name": "libcaller",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "libcaller enables allows multiple smart contract constant function calls to be grouped into a single call and the results aggregated into a single result",
   "main": "dist/index.js",
   "module": "dist/libcaller.esm.js",

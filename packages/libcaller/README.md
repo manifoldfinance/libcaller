@@ -1,7 +1,6 @@
-[![npm version](https://badge.fury.io/js/libcaller.svg)](https://badge.fury.io/js/libcaller)
-![downloads](https://img.shields.io/npm/dw/libcaller)
-
 # libcaller
+
+> [documentation](https://libcaller.netlify.app)
 
 libcaller is a lightweight library for interacting with the [multicall](https://github.com/makerdao/multicall/blob/master/src/Multicall.sol) smart contract.
 
