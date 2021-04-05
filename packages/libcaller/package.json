@@ -1,0 +1,45 @@
+{
+  "name": "libcaller",
+  "version": "1.0.0",
+  "description": "libcaller enables allows multiple smart contract constant function calls to be grouped into a single call and the results aggregated into a single result",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "npx jest --passWithNoTests",
+    "compile": "npx abi-types-generator ./src/ABI/multicall-abi.json --output=./src/ABI/types --name=multicall --provider=ethers",
+    "rebuild": "npm run-script build",
+    "build": "npx tsc -b",
+    "watch": "npx tsc -w",
+    "clean": "rm -f package-lock.json; rm -f yarn.lock; rm -rf node_modules; npm clean",
+    "prepare": "npx tsc -b"
+  },
+  "author": "SEE CONTRIBUTORS",
+  "license": "MIT",
+  "dependencies": {
+    "@ethersproject/providers": "^5.1.0",
+    "ethers": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.22",
+    "@types/node": "^14.11.2",
+    "codecov": "^3.8.1",
+    "ethereum-abi-types-generator": "^1.0.6",
+    "ts-jest": "^26.5.4",
+    "ts-node": "^9.1.1"
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "ethereum",
+    "blockchain",
+    "multicall",
+    "defi"
+  ],
+  "bugs": {
+    "url": "https://github.com/manifoldfinance/libcaller/issues"
+  },
+  "homepage": "https://github.com/manifoldfinance/libcaller#readme"
+}
