@@ -276,9 +276,3 @@ const multicall = new Multicall({
   // your rest of your config depending on the provider your using.
 });
 ```
-
-## Issues
-
-Please raise any issues in the below link.
-
-https://github.com/joshstevens19/libcaller/issues
