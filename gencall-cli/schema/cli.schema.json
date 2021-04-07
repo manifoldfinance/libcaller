@@ -1,0 +1,47 @@
+{
+  "command": "gencall-cli",
+  "subcommands": [
+    {
+      "command": "execute",
+      "args": [],
+      "flags": [
+        {
+          "type": "string",
+          "name": "execute when?",
+          "completion": {
+            "type": "oneOf",
+            "values": ["now", "later"]
+          }
+        }
+      ]
+    },
+    {
+      "command": "provider",
+      "args": [],
+      "flags": [
+        {
+          "type": "string",
+          "name": "Select chain",
+          "completion": {
+            "type": "oneOf",
+            "values": ["mainnet", "localhost", "custom endpoint"]
+          }
+        }
+      ]
+    },
+    {
+      "command": "wallet",
+      "args": [],
+      "flags": [
+        {
+          "type": "string",
+          "name": "Select wallet",
+          "completion": {
+            "type": "oneOf",
+            "values": ["Private key", "Mnemonic", "JsonRpc signer"]
+          }
+        }
+      ]
+    }
+  ]
+}
