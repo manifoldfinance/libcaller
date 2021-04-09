@@ -1,6 +1,6 @@
 {
   "name": "solidity-gencall",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "main": "src/index.js",
   "bin": {
@@ -9,7 +9,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/manifoldfinance/libcaller.git",
-    "directory": "gencall-cli/"
+    "directory": "packages/gencall-cli"
   },
   "dependencies": {
     "@ethersproject/abi": "^5.0.9",
