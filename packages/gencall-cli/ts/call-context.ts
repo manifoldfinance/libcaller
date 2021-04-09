@@ -1,4 +1,4 @@
-
+/** @file CallContext */
 export interface CallContext {
   /**
    * Reference to this call context
@@ -16,3 +16,4 @@ export interface CallContext {
   // tslint:disable-next-line: no-any
   methodParameters: any[];
 }
+/** @exports CallContext */
