@@ -1,3 +1,5 @@
 *.html linguist-vendored
+*.css linguist-vendored
+*.scss linguist-vendored
 *.sh text eol=lf
 *.sol text eol=lf
