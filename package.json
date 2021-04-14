@@ -1,7 +1,8 @@
 {
-  "name": "manifold-multicaller",
+  "name": "libcaller",
   "version": "1.0.0",
-  "description": "",
+  "private": true,
+  "description": "multicall monorepo",
   "main": "dist/libmpc.cjs.js",
   "module": "dist/libmpc.esm.js",
   "browser": "dist/libmpc.min.js",
