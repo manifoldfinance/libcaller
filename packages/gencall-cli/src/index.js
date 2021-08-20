@@ -21,7 +21,7 @@ const { Wallet } = require('@ethersproject/wallet');
 const getFunctionArgs = require('./utils/getParams.js');
 const formatResult = require('./utils/formatResult.js');
 
-console.log('\x1b[36m%s\x1b[0m', 'GenCall - Multicall Helper v0.1.1');
+console.log('\x1b[36m%s\x1b[0m', 'Solidity GenCall Shell Utility');
 yargs.version();
 yargs.help();
 
