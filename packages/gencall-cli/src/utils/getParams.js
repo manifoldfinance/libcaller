@@ -23,14 +23,15 @@ async function getParamType(param, name = param.name || '') {
     return await asyncReduce(
       Array(count)
         .fill()
-        .map((_, i) => () =>
-          getParamType(param.arrayChildren, `${name}[${i}]`),
+        .map(
+          (_, i) => () => getParamType(param.arrayChildren, `${name}[${i}]`),
         ),
     );
   } else if (param.baseType == 'tuple') {
     return await asyncReduce(
-      param.components.map((component) => () =>
-        getParamType(component, `${name}.${component.name}`),
+      param.components.map(
+        (component) => () =>
+          getParamType(component, `${name}.${component.name}`),
       ),
     );
   } else {

@@ -2,7 +2,7 @@
 
 'use strict';
 
-const fs = require('fs');
+const fs = require('fs-extra');
 const isUrl = require('is-url');
 const prompts = require('prompts');
 const yargs = require('yargs');
@@ -21,7 +21,7 @@ const { Wallet } = require('@ethersproject/wallet');
 const getFunctionArgs = require('./utils/getParams.js');
 const formatResult = require('./utils/formatResult.js');
 
-console.log('\x1b[36m%s\x1b[0m', 'GenCall - Multicall Helper v0.1.1');
+console.log('\x1b[36m%s\x1b[0m', '☎️ GenCall Shell Utility 🛠');
 yargs.version();
 yargs.help();
 
@@ -29,22 +29,22 @@ yargs.help();
   const argv = yargs.option('address', { string: true }).argv;
   prompts.override(argv);
 
-  const { artefact } = await prompts({
+  const { artifact } = await prompts({
     type: 'text',
-    name: 'artefact',
-    message: 'Path to artefact',
+    name: 'artifact',
+    message: 'Path to artifact',
     validate: fs.existsSync,
     format: (path) => JSON.parse(fs.readFileSync(path)),
     initial: 'build/contracts/YourContractABI.json',
   });
-  if (artefact == undefined) {
+  if (artifact == undefined) {
     throw 'Undefined Artifact, Terminating';
   }
-  if (!artefact.abi) {
+  if (!artifact.abi) {
     throw 'Invalid artifact - not of type ABI';
   }
-
-  const abi = new Interface(artefact.abi);
+  /** @const abi */
+  const abi = new Interface(artifact.abi);
   const { selector } = await prompts({
     type: 'select',
     name: 'selector',
@@ -100,7 +100,7 @@ yargs.help();
       type: (_, { provider }) => !provider && 'text',
       name: 'provider',
       message: 'Custom Env Endpoint',
-      initial: process.env.CHAIN,
+      initial: process.env.RPC_ENDPOINT,
       validate: isUrl,
       format: (endpoint) => new JsonRpcProvider(endpoint),
     },
@@ -111,7 +111,7 @@ yargs.help();
 
   const { chainId } = await provider.getNetwork();
   const { address: defaultAddress } =
-    (artefact.networks && artefact.networks[chainId]) || {};
+    (artifact.networks && artifact.networks[chainId]) || {};
   const { address } = await prompts([
     {
       type: defaultAddress && 'select',

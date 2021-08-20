@@ -1,24 +1,37 @@
 # [solidity-gencall](#)
 
-> npm i -g solidity-gencall && gen-cli --version
+> npm i -g solidity-gencall && solgen --version
 
-## overview
+## Overview
 
-`solidity-gencall` is a *nodejs command line tool* for encoding multicall rpc calls.
+`solidity-gencall` is a shell utility for encoding multicall rpc calls on EVM
+compatible chains
 
-### useage 
+### Usage
 
-> WIP
+> Quick start
 
 ```bash
-gen-cli
-> /path/to/abi
+solgen
 ```
-`gen-cli` will recognize your function's and provide a menu for you, e.g.
 
-```
+`solgen` will recognize your function's and provide a menu for you, e.g.
+
+```bash
 ? Select Function
 WETH()
 router()
 permitAndCall(address,uint256,bytes4,bytes,bytes4,bytes)
 ```
+
+#### Configuration File
+
+```bash
+.env
+MNEMONIC=your-mneomic-phrase
+RPC_ENDPOINT=your json rpc provider endpoint
+```
+
+## License
+
+MIT

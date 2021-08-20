@@ -1,5 +1,5 @@
 /** @file Exec Types */
-export enum Exec {
+export declare enum Execution {
   web3 = 'web3',
   ethers = 'ethers',
   customHttp = 'custom',
