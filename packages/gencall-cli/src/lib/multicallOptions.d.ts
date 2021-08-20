@@ -1,4 +1,4 @@
-import {Provider} from '@ethersproject/providers';
+import { Provider } from '@ethersproject/providers';
 interface MulticallOptionsBase {
   multicallCustomContractAddress?: string;
 }

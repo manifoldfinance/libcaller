@@ -13,7 +13,7 @@ async function asyncReduce(functors) {
 
 async function getParamType(param, name = param.name || '') {
   if (param.baseType == 'array') {
-    const {count} = await prompts({
+    const { count } = await prompts({
       type: 'number',
       name: 'count',
       message: `Length of "${name}[]"`,
@@ -23,16 +23,19 @@ async function getParamType(param, name = param.name || '') {
     return await asyncReduce(
       Array(count)
         .fill()
-        .map((_, i) => () => getParamType(param.arrayChildren, `${name}[${i}]`))
+        .map(
+          (_, i) => () => getParamType(param.arrayChildren, `${name}[${i}]`),
+        ),
     );
   } else if (param.baseType == 'tuple') {
     return await asyncReduce(
       param.components.map(
-        component => () => getParamType(component, `${name}.${component.name}`)
-      )
+        (component) => () =>
+          getParamType(component, `${name}.${component.name}`),
+      ),
     );
   } else {
-    const {value} = await prompts({
+    const { value } = await prompts({
       ...solidityTypes[param.baseType],
       name: 'value',
       message: `${name} (${param.baseType})`,
@@ -44,7 +47,7 @@ async function getParamType(param, name = param.name || '') {
 
 async function getFunctionArgs(fragment) {
   return await asyncReduce(
-    fragment.inputs.map(param => () => getParamType(param))
+    fragment.inputs.map((param) => () => getParamType(param)),
   );
 }
 

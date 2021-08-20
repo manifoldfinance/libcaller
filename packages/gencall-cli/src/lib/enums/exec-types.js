@@ -1,5 +1,5 @@
 'use strict';
-Object.defineProperty(exports, '__esModule', {value: true});
+Object.defineProperty(exports, '__esModule', { value: true });
 exports.Execution = void 0;
 /** @file Exec Types */
 var Execution;
