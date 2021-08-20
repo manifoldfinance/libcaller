@@ -1,10 +1,10 @@
 'use strict';
 
-const { isAddress } = require('@ethersproject/address');
-const { BigNumber } = require('@ethersproject/bignumber');
+const {isAddress} = require('@ethersproject/address');
+const {BigNumber} = require('@ethersproject/bignumber');
 
 /* ============ BEGIN: NOT EXPORTED BY @ethersproject/bignumber ============ */
-const { isBytes, isHexString } = require('@ethersproject/bytes');
+const {isBytes, isHexString} = require('@ethersproject/bytes');
 function isBigNumberish(value) {
   return (
     value != null &&
@@ -341,136 +341,136 @@ module.exports = {
   },
   bytes1: {
     type: 'text',
-    validate: (input) => !!/^0x[0-9a-z]{2}$/.exec(input),
+    validate: input => !!/^0x[0-9a-z]{2}$/.exec(input),
   },
   bytes2: {
     type: 'text',
-    validate: (input) => !!/^0x[0-9a-z]{4}$/.exec(input),
+    validate: input => !!/^0x[0-9a-z]{4}$/.exec(input),
   },
   bytes3: {
     type: 'text',
-    validate: (input) => !!/^0x[0-9a-z]{6}$/.exec(input),
+    validate: input => !!/^0x[0-9a-z]{6}$/.exec(input),
   },
   bytes4: {
     type: 'text',
-    validate: (input) => !!/^0x[0-9a-z]{8}$/.exec(input),
+    validate: input => !!/^0x[0-9a-z]{8}$/.exec(input),
   },
   bytes5: {
     type: 'text',
-    validate: (input) => !!/^0x[0-9a-z]{10}$/.exec(input),
+    validate: input => !!/^0x[0-9a-z]{10}$/.exec(input),
   },
   bytes6: {
     type: 'text',
-    validate: (input) => !!/^0x[0-9a-z]{12}$/.exec(input),
+    validate: input => !!/^0x[0-9a-z]{12}$/.exec(input),
   },
   bytes7: {
     type: 'text',
-    validate: (input) => !!/^0x[0-9a-z]{14}$/.exec(input),
+    validate: input => !!/^0x[0-9a-z]{14}$/.exec(input),
   },
   bytes8: {
     type: 'text',
-    validate: (input) => !!/^0x[0-9a-z]{16}$/.exec(input),
+    validate: input => !!/^0x[0-9a-z]{16}$/.exec(input),
   },
   bytes9: {
     type: 'text',
-    validate: (input) => !!/^0x[0-9a-z]{18}$/.exec(input),
+    validate: input => !!/^0x[0-9a-z]{18}$/.exec(input),
   },
   bytes10: {
     type: 'text',
-    validate: (input) => !!/^0x[0-9a-z]{20}$/.exec(input),
+    validate: input => !!/^0x[0-9a-z]{20}$/.exec(input),
   },
   bytes11: {
     type: 'text',
-    validate: (input) => !!/^0x[0-9a-z]{22}$/.exec(input),
+    validate: input => !!/^0x[0-9a-z]{22}$/.exec(input),
   },
   bytes12: {
     type: 'text',
-    validate: (input) => !!/^0x[0-9a-z]{24}$/.exec(input),
+    validate: input => !!/^0x[0-9a-z]{24}$/.exec(input),
   },
   bytes13: {
     type: 'text',
-    validate: (input) => !!/^0x[0-9a-z]{26}$/.exec(input),
+    validate: input => !!/^0x[0-9a-z]{26}$/.exec(input),
   },
   bytes14: {
     type: 'text',
-    validate: (input) => !!/^0x[0-9a-z]{28}$/.exec(input),
+    validate: input => !!/^0x[0-9a-z]{28}$/.exec(input),
   },
   bytes15: {
     type: 'text',
-    validate: (input) => !!/^0x[0-9a-z]{30}$/.exec(input),
+    validate: input => !!/^0x[0-9a-z]{30}$/.exec(input),
   },
   bytes16: {
     type: 'text',
-    validate: (input) => !!/^0x[0-9a-z]{32}$/.exec(input),
+    validate: input => !!/^0x[0-9a-z]{32}$/.exec(input),
   },
   bytes17: {
     type: 'text',
-    validate: (input) => !!/^0x[0-9a-z]{34}$/.exec(input),
+    validate: input => !!/^0x[0-9a-z]{34}$/.exec(input),
   },
   bytes18: {
     type: 'text',
-    validate: (input) => !!/^0x[0-9a-z]{36}$/.exec(input),
+    validate: input => !!/^0x[0-9a-z]{36}$/.exec(input),
   },
   bytes19: {
     type: 'text',
-    validate: (input) => !!/^0x[0-9a-z]{38}$/.exec(input),
+    validate: input => !!/^0x[0-9a-z]{38}$/.exec(input),
   },
   bytes20: {
     type: 'text',
-    validate: (input) => !!/^0x[0-9a-z]{40}$/.exec(input),
+    validate: input => !!/^0x[0-9a-z]{40}$/.exec(input),
   },
   bytes21: {
     type: 'text',
-    validate: (input) => !!/^0x[0-9a-z]{42}$/.exec(input),
+    validate: input => !!/^0x[0-9a-z]{42}$/.exec(input),
   },
   bytes22: {
     type: 'text',
-    validate: (input) => !!/^0x[0-9a-z]{44}$/.exec(input),
+    validate: input => !!/^0x[0-9a-z]{44}$/.exec(input),
   },
   bytes23: {
     type: 'text',
-    validate: (input) => !!/^0x[0-9a-z]{46}$/.exec(input),
+    validate: input => !!/^0x[0-9a-z]{46}$/.exec(input),
   },
   bytes24: {
     type: 'text',
-    validate: (input) => !!/^0x[0-9a-z]{48}$/.exec(input),
+    validate: input => !!/^0x[0-9a-z]{48}$/.exec(input),
   },
   bytes25: {
     type: 'text',
-    validate: (input) => !!/^0x[0-9a-z]{50}$/.exec(input),
+    validate: input => !!/^0x[0-9a-z]{50}$/.exec(input),
   },
   bytes26: {
     type: 'text',
-    validate: (input) => !!/^0x[0-9a-z]{52}$/.exec(input),
+    validate: input => !!/^0x[0-9a-z]{52}$/.exec(input),
   },
   bytes27: {
     type: 'text',
-    validate: (input) => !!/^0x[0-9a-z]{54}$/.exec(input),
+    validate: input => !!/^0x[0-9a-z]{54}$/.exec(input),
   },
   bytes28: {
     type: 'text',
-    validate: (input) => !!/^0x[0-9a-z]{56}$/.exec(input),
+    validate: input => !!/^0x[0-9a-z]{56}$/.exec(input),
   },
   bytes29: {
     type: 'text',
-    validate: (input) => !!/^0x[0-9a-z]{58}$/.exec(input),
+    validate: input => !!/^0x[0-9a-z]{58}$/.exec(input),
   },
   bytes30: {
     type: 'text',
-    validate: (input) => !!/^0x[0-9a-z]{60}$/.exec(input),
+    validate: input => !!/^0x[0-9a-z]{60}$/.exec(input),
   },
   bytes31: {
     type: 'text',
-    validate: (input) => !!/^0x[0-9a-z]{62}$/.exec(input),
+    validate: input => !!/^0x[0-9a-z]{62}$/.exec(input),
   },
   bytes32: {
     type: 'text',
-    validate: (input) => !!/^0x[0-9a-z]{64}$/.exec(input),
+    validate: input => !!/^0x[0-9a-z]{64}$/.exec(input),
   },
   bytes: {
     type: 'text',
-    validate: (input) => !!/^0x([0-9a-z]{2})*$/.exec(input),
+    validate: input => !!/^0x([0-9a-z]{2})*$/.exec(input),
   },
-  address: { type: 'text', validate: isAddress },
-  string: { type: 'text' },
+  address: {type: 'text', validate: isAddress},
+  string: {type: 'text'},
 };
