@@ -21,7 +21,7 @@ const { Wallet } = require('@ethersproject/wallet');
 const getFunctionArgs = require('./utils/getParams.js');
 const formatResult = require('./utils/formatResult.js');
 
-console.log('\x1b[36m%s\x1b[0m', '☎️ GenCall Shell Utility 🛠');
+console.log('\x1b[36m%s\x1b[0m', '  gencall shell utility ');
 yargs.version();
 yargs.help();
 
@@ -88,8 +88,8 @@ yargs.help();
         { value: 'mainnet' },
         { value: 'rinkeby' },
         { value: 'ropsten' },
-        { value: 'goerli' },
-        { value: 'kovan' },
+        { value: 'goerli'  },
+        { value: 'kovan'   },
         { value: 'http://localhost:8545' },
         { title: 'custom endpoint', value: null },
       ],
