@@ -2,6 +2,8 @@
 
 > npm i -g solidity-gencall && solgen --version
 
+> Thanks to [@Amxx](https://github.com/Amxx/anycall)
+
 ## Overview
 
 `solidity-gencall` is a shell utility for encoding multicall rpc calls on EVM
