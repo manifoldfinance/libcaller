@@ -1,6 +1,6 @@
 {
   "name": "solidity-gencall",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "license": "MIT",
   "description": "generate and encode RPC calls for a given ABI",
   "author": "SEE CONTRIBUTORS",
