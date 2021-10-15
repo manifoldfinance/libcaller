@@ -8,6 +8,7 @@
   "bin": {
     "solgen": "src/index.js"
   },
+"keywords": ["ethereum", "rpc", "solidity", "abi", "encoding", "smart contracts", "defi", "evm"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/manifoldfinance/libcaller.git",
