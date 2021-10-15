@@ -1,3 +1,14 @@
 node_modules
 .DS_Store
+*.tgz
+*.tar.gz
+*.zip
+*.log
+*.cache
+cache/
+build/
+dist/
+coverage/
+.cvoerage/
+.nyc*
 
